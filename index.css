@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .glass-effect {
+    background: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  }
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #d4af37;
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  .map-container iframe {
+    filter: grayscale(20%) contrast(1.1);
+  }
+  .dark .map-container iframe {
+    filter: grayscale(80%) invert(90%) contrast(1.1);
+  }
+}
