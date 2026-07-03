@@ -8,51 +8,41 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Cairo', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
-        taiyo: {
-          black: '#0a0a0a',
-          dark: '#111111',
-          red: '#c41e3a',
-          gold: '#d4af37',
-          goldLight: '#f4d03f',
-          cream: '#f5f5dc',
+        fitx: {
+          bg: '#0a0a0f',
+          surface: '#131318',
+          card: '#1a1a22',
+          card2: '#20202a',
+          border: '#2a2a35',
+          text: '#f3f4f6',
+          muted: '#8b8b98',
+          primary: '#ff5b1e',
+          primaryLight: '#ff8a4c',
+          accent: '#c6ff3d',
+          danger: '#ff3b5c',
         }
       },
       animation: {
-        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-        'fade-in': 'fadeIn 1s ease-out forwards',
-        'slide-in-left': 'slideInLeft 0.8s ease-out forwards',
-        'slide-in-right': 'slideInRight 0.8s ease-out forwards',
-        'scale-in': 'scaleIn 0.6s ease-out forwards',
-        'float': 'float 6s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.3s ease-out forwards',
+        'scale-in': 'scaleIn 0.2s ease-out forwards',
+        'pulse-ring': 'pulseRing 1.4s ease-out infinite',
       },
       keyframes: {
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(30px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        slideInLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-50px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-        slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(50px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
         scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.9)' },
+          '0%': { opacity: '0', transform: 'scale(0.92)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
+        pulseRing: {
+          '0%': { boxShadow: '0 0 0 0 rgba(255, 91, 30, 0.5)' },
+          '100%': { boxShadow: '0 0 0 12px rgba(255, 91, 30, 0)' },
         }
       }
     },

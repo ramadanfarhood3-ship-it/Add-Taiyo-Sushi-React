@@ -1,45 +1,40 @@
-# Taiyo Sushi Restaurant
+# FitX
 
-A modern, responsive restaurant website for Taiyo Sushi Restaurant - an authentic Japanese restaurant located in Damascus, Syria.
+تطبيق React لتتبع برنامج تدريبي أسبوعي، بواجهة عربية RTL بالكامل.
 
-## Features
+## المميزات
 
-- Elegant Japanese-inspired design with dark theme
-- Black, red, and gold color accents
-- Smooth animations and premium UX
-- Mobile-first responsive design
-- Dark/Light mode toggle
-- Interactive menu with category filtering
-- Image gallery with lightbox
-- Customer reviews with star ratings
-- Online reservation form
-- Google Maps integration
-- SEO-friendly structure
+- شريط أسبوعي (السبت إلى الجمعة) يعرض نسبة إنجاز كل يوم للتنقل السريع بين الأيام
+- تمارين خاصة يضيفها المستخدم لكل يوم: الاسم، الجولات، التكرارات، الوزن (كجم، قابل للتعديل مباشرة)، ووقت راحة مخصص لكل تمرين
+- علامات تالي (tally marks) لكل جولة، تُنجز بالترتيب بضغطة واحدة
+- مؤقت راحة تلقائي في شريط سفلي (عداد دائري تنازلي + زر "+15 ثانية" + زر "تخطي" + صوت تنبيه) يبدأ عند إنهاء أي جولة غير أخيرة
+- حذف تمرين منفرد أو كل تمارين اليوم مع تأكيد
+- حفظ تلقائي في localStorage
+- تصميم داكن رياضي، متجاوب للجوال أولاً، بخط Cairo للنصوص وخط JetBrains Mono للأرقام
 
-## Tech Stack
+## التقنيات
 
 - React 18 + Vite
 - Tailwind CSS 3
 - Lucide React Icons
-- Google Fonts (Playfair Display + Inter)
 
-## Getting Started
+## التشغيل
 
 ```bash
-# Install dependencies
+# تثبيت الحزم
 npm install
 
-# Start development server
+# تشغيل خادم التطوير
 npm run dev
 
-# Build for production
+# بناء نسخة الإنتاج
 npm run build
 ```
 
-## Project Structure
+## هيكل المشروع
 
 ```
-taiyo-sushi-restaurant/
+fitx-workout-tracker/
 ├── index.html
 ├── package.json
 ├── vite.config.js
@@ -50,29 +45,20 @@ taiyo-sushi-restaurant/
     ├── main.jsx
     ├── App.jsx
     ├── index.css
+    ├── hooks/
+    │   └── useLocalStorage.js
+    ├── utils/
+    │   ├── days.js
+    │   └── sound.js
     └── components/
-        ├── Navbar.jsx
-        ├── Hero.jsx
-        ├── About.jsx
-        ├── Menu.jsx
-        ├── Gallery.jsx
-        ├── Reviews.jsx
-        ├── Location.jsx
-        ├── Reservation.jsx
-        └── Footer.jsx
+        ├── WeekBar.jsx
+        ├── ExerciseCard.jsx
+        ├── TallyMarks.jsx
+        ├── AddExerciseForm.jsx
+        ├── RestTimerBar.jsx
+        └── ConfirmDialog.jsx
 ```
 
-## Sections
+## الترخيص
 
-1. Hero - Full-screen background with CTAs
-2. About Us - Restaurant story and statistics
-3. Menu - 8 categories with 24+ items
-4. Gallery - Interactive image grid with lightbox
-5. Reviews - 4.8/5 rating with testimonials
-6. Location & Contact - Address, phone, hours, map
-7. Reservation - Online booking form
-8. Footer - Social links and copyright
-
-## License
-
-© 2024 Taiyo Sushi Restaurant. All rights reserved.
+للاستخدام الشخصي والتعليمي.
