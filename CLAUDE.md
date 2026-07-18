@@ -17,28 +17,9 @@ npm run preview      # preview the production build
 
 There is no test suite and no lint script configured in `package.json` — don't assume `npm test` or `npm run lint` exist.
 
-## Known issue: broken `src/` path (fix before running build/dev)
+## Source layout
 
-`index.html` loads `<script type="module" src="/src/main.jsx">` and `tailwind.config.js` scans content from `./src/**/*.{js,ts,jsx,tsx}`, but **all source files currently live at the repo root** (`main.jsx`, `App.jsx`, `Navbar.jsx`, etc.) instead of under `src/` and `src/components/`. As-is, `npm run build` fails immediately with `Failed to resolve /src/main.jsx from index.html`, and Tailwind would never pick up class names from the components even if the dev server ran.
-
-The README documents the *intended* layout:
-```
-src/
-├── main.jsx
-├── App.jsx
-├── index.css
-└── components/
-    ├── Navbar.jsx
-    ├── Hero.jsx
-    ├── About.jsx
-    ├── Menu.jsx
-    ├── Gallery.jsx
-    ├── Reviews.jsx
-    ├── Location.jsx
-    ├── Reservation.jsx
-    └── Footer.jsx
-```
-`App.jsx` already imports components as `./components/Navbar`, `./components/Hero`, etc., consistent with this intended layout. If asked to get the app running, move `main.jsx`, `App.jsx`, and `index.css` into `src/`, and the eight section components into `src/components/`, rather than rewriting the imports or the Vite/Tailwind config.
+Source lives under `src/` (`main.jsx`, `App.jsx`, `index.css`) and `src/components/` (the eight section components), matching what `index.html`'s `<script type="module" src="/src/main.jsx">` and `tailwind.config.js`'s `./src/**/*.{js,ts,jsx,tsx}` content glob expect. `App.jsx` imports components as `./components/Navbar`, `./components/Hero`, etc. Keep new files under this tree — anything placed at the repo root will build fine locally via bare imports but won't be picked up by Tailwind's content scan.
 
 ## Architecture
 
