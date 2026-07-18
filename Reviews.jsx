@@ -6,7 +6,7 @@ const reviews = [
   { name: 'Sarah M.', rating: 5, text: 'An authentic Japanese experience right here in Cham City Center. The ambiance is elegant and the service is impeccable.', date: '1 month ago' },
   { name: 'Omar H.', rating: 4, text: 'Great variety on the menu. The sashimi platter was incredibly fresh. A bit pricey but worth every penny for the quality.', date: '3 weeks ago' },
   { name: 'Lina S.', rating: 5, text: 'Perfect date night spot. The dim lighting, traditional decor, and amazing food make this our favorite restaurant in Damascus.', date: '2 months ago' },
-  { name: 'Youssef R.', rating: 5, text: "The ramen here rivals what I've had in Tokyo. The broth is rich and flavorful. Highly recommend the Tonkotsu!", date: '1 week ago' },
+  { name: 'Youssef R.', rating: 5, text: 'The ramen here rivals what I've had in Tokyo. The broth is rich and flavorful. Highly recommend the Tonkotsu!', date: '1 week ago' },
 ]
 
 function StarRating({ rating }) {
